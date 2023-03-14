@@ -1,6 +1,6 @@
 import {menuArray} from './data.js'
 
-const priceArray = []
+let priceArray = []
 let totalPrice = 0
 
 document.addEventListener("click", function(e){
@@ -10,6 +10,13 @@ document.addEventListener("click", function(e){
     else if(e.target.dataset.remove) {
         removeItem(e.target.dataset.remove)
     }
+    else if(e.target.id == 'complete-order-btn') {
+        payFor()
+    }
+    else if(e.target.id == 'pay-modal-btn') {
+        orderComplete()
+    }
+    
 })
 
 function itemsTotalPrice(priceArray) {
@@ -24,17 +31,54 @@ function addItem(itemId) {
         return menu.id == itemId
     })[0]
 
-    priceArray.push(
-        {
-            name: itemObj.name,
-            price: itemObj.price,
-            id: itemObj.id
-        },
-    )
+    const priceArrayObj = priceArray.filter(function(item){
+        return itemObj.id == item.id
+    })[0]       //for checking if item already exist or not
+
+    if(!priceArrayObj) {    //if item not exist already then only add
+        priceArray.push(
+            {
+                name: itemObj.name,
+                price: itemObj.price,
+                id: itemObj.id
+            },
+        )
+    }
     
     itemsTotalPrice(priceArray)
     renderPriceHtml(priceArray)
-    
+}
+
+function removeItem(itemId) {
+    let i = 0
+    let index = i       //to get the index of object which is to be removed
+    priceArray.filter(function(item){
+        if(item.id == itemId) {
+            index = i
+        }
+        i++
+    })
+
+    totalPrice -= priceArray[index].price
+    priceArray.splice(index, 1)
+    renderPriceHtml(priceArray)
+}
+
+function payFor() {
+    document.getElementById("modal").style.display = "flex"
+}
+
+function orderComplete() {
+    document.getElementById("modal").style.display = "none"
+    render()
+    renderThanksMsg()
+}
+
+function renderThanksMsg() {
+    document.getElementById("price-html-container").style.padding = "0"
+    document.getElementById("price-html-container").innerHTML = ""
+    document.getElementById("thanks-msg").style.display = "flex"
+    console.log("aa")
 }
 
 function renderPriceHtml(priceArray) {
@@ -44,7 +88,7 @@ function renderPriceHtml(priceArray) {
         priceHtml += `
             <div class="grid-price">
                 <h2>${item.name}</h2>
-                <span class="light-color" data-remove="${item.id}">remove</span>
+                <span class="light-color remove" data-remove="${item.id}">remove</span>
                 <span class="right-align">$${item.price}</span>
             </div>
         `
@@ -56,7 +100,7 @@ function renderPriceHtml(priceArray) {
             <span class="right-align">$${totalPrice}</span>
         </div>
 
-        <button>Complete Order</button>
+        <button id="complete-order-btn">Complete Order</button>
     `
 
     document.getElementById("price-html").innerHTML = priceHtml

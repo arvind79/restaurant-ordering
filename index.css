@@ -8,21 +8,26 @@ body {
     font-family: 'Smythe', Verdana;
 } 
 
+.body-background {
+    background-color: #a9a9a9
+}
+
 /* Layout */
 header {
     width: 600px;
     margin: 0 auto;
+    background: url(burger-background.jpg);
+    background-size: cover;
 }
 
 .container {
     width: 600px;
     padding: 67px 0 4px 0;
     margin: 0 auto;
-    background-color: #7d1ca9;
+    background-color: #ffffff;
 }
 
 .header-inner {
-    background-color: aquamarine;
     padding: 56px 309px 57px 46px;
 }
 
@@ -76,45 +81,12 @@ main + .container {
     margin-bottom: 60px;
 }
 
-button {
-    width: 100%;
-    padding: 18px 0;
-    font-family: Verdana;
-    font-weight: 700;
-    margin-top: 30px;
-}
-
-.modal {
-    width: 524px;
-    border-radius: 4px;
-    padding: 47px 23px 30px 23px;
-    margin: 0 auto;
-    background-color: #6a6565;
-    filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
-}
-
-input {
-    display: block;
-    width: 475px;
-    padding: 14px 26px;
-    margin-bottom: 23px;
-}
-
-input:last-of-type {
-    margin-bottom: 0;
-}
-
-.order-confirm {
-    padding: 51px 60px;
-    width: 504px;
-    margin: 0 auto;
-    background-color: #ECFDF5;
-    color: #065F46;
-    font-size: 32px;
-}
-
 
 /*    Typography    */
+
+h1, p {
+    color: #fff;
+}
 
 .food {
     font-size: 80px;
@@ -145,6 +117,7 @@ i {
 
 h1{
     margin: 0;
+    font-weight: 400;
 }
 
 h3 {
@@ -164,6 +137,43 @@ h3 {
     color: #BBBBBB;
 }
 
+
+/*      Links          */
+
+.remove:hover {
+    cursor: pointer;
+    color: #ba9999;
+}
+
+
+
+/*        Buttons      */
+
+button {
+    width: 100%;
+    padding: 18px 0;
+    font-family: Verdana;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+/*        Modal      */
+
+.modal {
+    display: none;      /* flex for display modal */
+    position: fixed;
+    top: 170px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    width: 524px;
+    border-radius: 4px;
+    padding: 47px 23px 30px 23px;
+    margin: 0 auto;
+    background-color: #6a6565;
+    filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
+}
+
 .modal-inner {
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -173,7 +183,32 @@ h3 {
     font-size: 20px;
 }
 
+input {
+    display: block;
+    width: 475px;
+    padding: 14px 26px;
+    margin-bottom: 23px;
+}
 
-/*                         */
+input:last-of-type {
+    margin-bottom: 0;
+}
 
 
+/*       end       */
+
+.msg-container {
+    display: none;      /* flex for displaying the msg */
+    width: 600px;
+    margin: 0 auto;
+    padding: 51px 60px;
+    background-color: #ffffff;
+}
+
+.thanks-msg {
+    padding: 30px;
+    width: 450px;
+    background-color: #ECFDF5;
+    color: #065F46;
+    font-size: 32px;
+}
