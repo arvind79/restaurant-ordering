@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Smythe&family=Source+Sans+Pro:wght@400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-inner">
+            <h1>Jimmy's Diner</h1>
+            <p class="heading-info">The best burgers and pizzas in town</p>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container" id="main-html">
+            <section class="grid">
+                <div>
+                    <span class="food">🍕</span>
+                </div>
+                <div>
+                    <h2>Pizza</h2>
+                    <p class="light-color">pepperoni, mushroom, mozarella</p>
+                    <span>$14</span>
+                </div>
+                <div class="right-align">
+                    <i class="fa-light fa-plus"></i>
+                </div>
+            </section>
+
+            <section class="grid">
+                <div>
+                    <span class="food">🍔</span>
+                </div>
+                <div>
+                    <h2>Hamburger</h2>
+                    <p class="light-color">beef, cheese, lettuce</p>
+                    <span>$10</span>
+                </div>
+                <div class="right-align">
+                    <i class="fa-light fa-plus"></i>
+                </div>
+            </section>
+
+            <section class="grid">
+                <div>
+                    <span class="food">🍺</span>
+                </div>
+                <div>
+                    <h2>Beer</h2>
+                    <p class="light-color">grain, hops, yeast, water</p>
+                    <span>$12</span>
+                </div>
+                <div class="right-align">
+                    <i class="fa-light fa-plus"></i>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <section class="container">
+        <div class="price-container" id="price-html">
+            <h2>Your Order</h2>
+                <div class="grid-price">
+                    <h2>Pizza</h2>
+                    <span class="light-color">remove</span>
+                    <span class="right-align">$14</span>
+                </div>
+                <div class="grid-price">
+                    <h2>Beer</h2>
+                    <span class="light-color">remove</span>
+                    <span class="right-align">$12</span>
+                </div>
+            <div class="grid-price total-price">
+                <h2>Total Price:</h2>
+                <span class="right-align">$26</span>
+            </div>
+
+            <button>Complete Order</button>
+        </div>
+    </section>
+
+    <section class="modal">
+        <div class="modal-inner">
+            <h3>Enter card details</h3>
+            <input type="text" placeholder="Enter your name">
+            <input type="number" placeholder="Enter card number">
+            <input type="number" placeholder="Enter CVV">
+            <button>Pay</button>
+        </div>
+    </section>
+
+    <div class="order-confirm">
+        <p>Thanks, James! Your order is on its way!</p>
+    </div>
+
+    <script src="index.js" type="module"></script>
+
+</body>
+</html>
+        
+

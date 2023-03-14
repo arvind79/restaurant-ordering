@@ -1,0 +1,179 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Smythe', Verdana;
+} 
+
+/* Layout */
+header {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.container {
+    width: 600px;
+    padding: 67px 0 4px 0;
+    margin: 0 auto;
+    background-color: #7d1ca9;
+}
+
+.header-inner {
+    background-color: aquamarine;
+    padding: 56px 309px 57px 46px;
+}
+
+.grid {
+    width: 508px;
+    height: 140px;
+    margin: 0 auto;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: start;
+    gap: 31px;
+    border-bottom: 1px solid #8B8B8B;
+}
+
+.right-align {
+    margin-left: auto;
+    padding: 25px 0 0 0;
+}
+
+main + .container {
+    padding-top: 1px;
+}
+
+.price-container {
+    margin: 0 auto;
+    width: 508px;
+    text-align: center;
+    padding-bottom: 53px;
+}
+
+.grid-price {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    align-items: baseline;
+    padding: 1px;
+    margin-bottom: 22px;
+}
+
+.grid-price .right-align {
+    padding: 0;
+}
+
+.total-price {
+    border-top: 1px solid black;
+    margin-top: 30px;
+    padding-top: 10px;
+}
+
+.price-container > h2 {
+    margin-bottom: 60px;
+}
+
+button {
+    width: 100%;
+    padding: 18px 0;
+    font-family: Verdana;
+    font-weight: 700;
+    margin-top: 30px;
+}
+
+.modal {
+    width: 524px;
+    border-radius: 4px;
+    padding: 47px 23px 30px 23px;
+    margin: 0 auto;
+    background-color: #6a6565;
+    filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
+}
+
+input {
+    display: block;
+    width: 475px;
+    padding: 14px 26px;
+    margin-bottom: 23px;
+}
+
+input:last-of-type {
+    margin-bottom: 0;
+}
+
+.order-confirm {
+    padding: 51px 60px;
+    width: 504px;
+    margin: 0 auto;
+    background-color: #ECFDF5;
+    color: #065F46;
+    font-size: 32px;
+}
+
+
+/*    Typography    */
+
+.food {
+    font-size: 80px;
+}
+
+h2 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.heading-info {
+    line-height: 0;
+    margin-top: 16px;
+}
+
+p {
+    margin: 8px 0;
+}
+
+span {
+    font-size: 20px;
+}
+
+i {
+    font-family: 'inter';
+    font-style: normal;
+}
+
+h1{
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+    margin-bottom: 46px;
+    font-size: 24px;
+}
+
+.fa-plus {
+    font-size: 20px;
+    padding: 15px;
+    border-radius: 100%;
+    border: 1px solid #8B8B8B;
+}
+
+.light-color {
+    color: #BBBBBB;
+}
+
+.modal-inner {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.modal-inner button {
+    font-size: 20px;
+}
+
+
+/*                         */
+
+
