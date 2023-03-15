@@ -96,10 +96,12 @@
         <section class="modal" id="modal">
             <div class="modal-inner">
                 <h3>Enter card details</h3>
-                    <input type="text" placeholder="Enter your name">
-                    <input type="number" placeholder="Enter card number">
-                    <input type="number" placeholder="Enter CVV">
-                    <button id="pay-modal-btn">Pay</button>
+                <form id="form-el">
+                    <input type="text" name="name" placeholder="Enter your name" required/>
+                    <input type="number" placeholder="Enter card number" required/>
+                    <input type="number" placeholder="Enter CVV" required/>
+                    <button type="submit" id="pay-modal-btn">Pay</button>
+                </form>
             </div>
         </section>
 

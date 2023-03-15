@@ -78,8 +78,11 @@ function renderThanksMsg() {
     document.getElementById("price-html-container").style.padding = "0"
     document.getElementById("price-html-container").innerHTML = ""
     document.getElementById("thanks-msg").style.display = "flex"
-    console.log("aa")
 }
+
+document.getElementById("form-el").addEventListener('submit', function(e){
+    e.preventDefault()
+})
 
 function renderPriceHtml(priceArray) {
     let priceHtml = ``
