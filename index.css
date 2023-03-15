@@ -133,6 +133,10 @@ h3 {
     border: 1px solid #8B8B8B;
 }
 
+.fa-plus:hover {
+    background-color: #f5f3f3;
+}
+
 .light-color {
     color: #BBBBBB;
 }
@@ -155,6 +159,8 @@ button {
     font-family: Verdana;
     font-weight: 700;
     margin-top: 30px;
+    color: #fff;
+    background-color: #16DB99;
 }
 
 /*        Modal      */
@@ -170,7 +176,7 @@ button {
     border-radius: 4px;
     padding: 47px 23px 30px 23px;
     margin: 0 auto;
-    background-color: #6a6565;
+    background-color: #ffffff;
     filter: drop-shadow(5.18654px 5.18654px 255.437px rgba(0, 0, 0, 0.5));
 }
 
@@ -201,7 +207,7 @@ input:last-of-type {
     display: none;      /* flex for displaying the msg */
     width: 600px;
     margin: 0 auto;
-    padding: 51px 60px;
+    padding: 51px 76px;
     background-color: #ffffff;
 }
 
