@@ -12,10 +12,19 @@ body {
     background-color: #a9a9a9
 }
 
-/* Layout */
+/* ======================
+        layout
+========================= */
+
+header,
+.container,
+.grid,
+.price-container {
+    margin: 0 auto;
+}
+
 header {
     width: 600px;
-    margin: 0 auto;
     background: url(burger-background.jpg);
     background-size: cover;
 }
@@ -23,7 +32,6 @@ header {
 .container {
     width: 600px;
     padding: 67px 0 4px 0;
-    margin: 0 auto;
     background-color: #ffffff;
 }
 
@@ -31,10 +39,13 @@ header {
     padding: 56px 309px 57px 46px;
 }
 
-.grid {
+.grid,
+.price-container {
     width: 508px;
+}
+
+.grid {
     height: 140px;
-    margin: 0 auto;
     margin-bottom: 45px;
     display: flex;
     justify-content: start;
@@ -52,8 +63,6 @@ main + .container {
 }
 
 .price-container {
-    margin: 0 auto;
-    width: 508px;
     text-align: center;
     padding-bottom: 53px;
 }
@@ -81,20 +90,36 @@ main + .container {
     margin-bottom: 60px;
 }
 
+/* ======================
+         Typography
+========================= */
 
-/*    Typography    */
-
-h1, p {
+h1,
+p {
     color: #fff;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+h1{
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    margin-bottom: 46px;
+    font-size: 24px;
 }
 
 .food {
     font-size: 80px;
-}
-
-h2 {
-    margin: 0;
-    font-size: 28px;
 }
 
 .heading-info {
@@ -115,17 +140,6 @@ i {
     font-style: normal;
 }
 
-h1{
-    margin: 0;
-    font-weight: 400;
-}
-
-h3 {
-    margin: 0;
-    margin-bottom: 46px;
-    font-size: 24px;
-}
-
 .fa-plus {
     font-size: 20px;
     padding: 15px;
@@ -141,17 +155,18 @@ h3 {
     color: #BBBBBB;
 }
 
-
-/*      Links          */
+/* ======================
+        links
+========================= */
 
 .remove:hover {
     cursor: pointer;
     color: #ba9999;
 }
 
-
-
-/*        Buttons      */
+/* ======================
+        Buttons
+========================= */
 
 button {
     width: 100%;
@@ -163,7 +178,9 @@ button {
     background-color: #16DB99;
 }
 
-/*        Modal      */
+/* ======================
+        Modal
+========================= */
 
 .modal {
     display: none;      /* flex for display modal */
@@ -200,8 +217,9 @@ input:last-of-type {
     margin-bottom: 0;
 }
 
-
-/*       end       */
+/* ======================
+    Order Completed
+========================= */
 
 .msg-container {
     display: none;      /* flex for displaying the msg */
