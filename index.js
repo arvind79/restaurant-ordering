@@ -11,18 +11,37 @@ document.addEventListener("click", function(e){
         removeItem(e.target.dataset.remove)
     }
     else if(e.target.id == 'complete-order-btn') {
-        payFor()
+        completeOrder()
     }
     else if(e.target.id == 'pay-modal-btn') {
-        orderComplete()
+        payOrder()
     }
-    
 })
+
+document.addEventListener("input", function(e){
+    if(e.target.dataset.qty) {
+        orderQty(e.target.dataset.qty)
+    }
+}) 
+
+function orderQty(itemId) {
+    const orderValue = document.getElementById(`qty-${itemId}`)
+
+    const targetObj = priceArray.filter(function(item){
+        return item.id == itemId
+    })[0]
+    
+    targetObj.qty = orderValue.value
+    targetObj.price = targetObj.basePrice * targetObj.qty
+
+    itemsTotalPrice(priceArray)
+    renderPriceHtml(priceArray)
+}
 
 function itemsTotalPrice(priceArray) {
     totalPrice = 0
     priceArray.forEach(function(item){
-        totalPrice += item.price
+        totalPrice += (item.price)
     })
 }
 
@@ -39,7 +58,9 @@ function addItem(itemId) {
         priceArray.push(
             {
                 name: itemObj.name,
+                qty: 1,
                 price: itemObj.price,
+                basePrice: itemObj.price,
                 id: itemObj.id
             },
         )
@@ -64,11 +85,13 @@ function removeItem(itemId) {
     renderPriceHtml(priceArray)
 }
 
-function payFor() {
-    document.getElementById("modal").style.display = "flex"
+function completeOrder() {
+    if(totalPrice != 0) {
+        document.getElementById("modal").style.display = "flex"
+    }
 }
 
-function orderComplete() {
+function payOrder() {
     document.getElementById("modal").style.display = "none"
     render()
     renderThanksMsg()
@@ -91,6 +114,12 @@ function renderPriceHtml(priceArray) {
         priceHtml += `
             <div class="grid-price">
                 <h2>${item.name}</h2>
+                <select id="qty-${item.id}" data-qty="${item.id}">
+                    <option selected>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                </select>
                 <span class="light-color remove" data-remove="${item.id}">remove</span>
                 <span class="right-align">$${item.price}</span>
             </div>

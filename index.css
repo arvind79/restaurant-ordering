@@ -178,6 +178,12 @@ button {
     background-color: #16DB99;
 }
 
+select {
+    border: none;
+    font-family: verdana;
+    box-shadow: 0 0 3px #e88209;
+}
+
 /* ======================
         Modal
 ========================= */
