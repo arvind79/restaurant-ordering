@@ -27,69 +27,13 @@
 
         <main class="main">
             <div class="container" id="main-html">
-                <!-- <section class="grid">
-                    <div>
-                        <span class="food">🍕</span>
-                    </div>
-                    <div>
-                        <h2>Pizza</h2>
-                        <p class="light-color">pepperoni, mushroom, mozarella</p>
-                        <span>$14</span>
-                    </div>
-                    <div class="right-align">
-                        <i class="fa-light fa-plus"></i>
-                    </div>
-                </section>
-
-                <section class="grid">
-                    <div>
-                        <span class="food">🍔</span>
-                    </div>
-                    <div>
-                        <h2>Hamburger</h2>
-                        <p class="light-color">beef, cheese, lettuce</p>
-                        <span>$10</span>
-                    </div>
-                    <div class="right-align">
-                        <i class="fa-light fa-plus"></i>
-                    </div>
-                </section>
-
-                <section class="grid">
-                    <div>
-                        <span class="food">🍺</span>
-                    </div>
-                    <div>
-                        <h2>Beer</h2>
-                        <p class="light-color">grain, hops, yeast, water</p>
-                        <span>$12</span>
-                    </div>
-                    <div class="right-align">
-                        <i class="fa-light fa-plus"></i>
-                    </div>
-                </section> -->
+                <!-- javascript getMainHtml() function -->
             </div>
         </main>
 
         <section class="container" id="price-html-container">
             <div class="price-container" id="price-html">
-                <!-- <h2>Your Order</h2>
-                    <div class="grid-price">
-                        <h2>Pizza</h2>
-                        <span class="light-color">remove</span>
-                        <span class="right-align">$14</span>
-                    </div>
-                    <div class="grid-price">
-                        <h2>Beer</h2>
-                        <span class="light-color">remove</span>
-                        <span class="right-align">$12</span>
-                    </div>
-                <div class="grid-price total-price">
-                    <h2>Total Price:</h2>
-                    <span class="right-align">$26</span>
-                </div>
-
-                <button>Complete Order</button> -->
+                <!-- javascript renderPriceHtml() function -->
             </div>
         </section>
 
@@ -97,7 +41,7 @@
             <div class="modal-inner">
                 <h3>Enter card details</h3>
                 <form id="form-el">
-                    <input type="text" name="name" placeholder="Enter your name" required/>
+                    <input type="text" id="user-name-input" name="name" placeholder="Enter your name" required/>
                     <input type="number" placeholder="Enter card number" required/>
                     <input type="number" placeholder="Enter CVV" required/>
                     <button type="submit" id="pay-modal-btn">Pay</button>
@@ -106,7 +50,7 @@
         </section>
 
         <div class="msg-container" id="thanks-msg">
-            <p class="thanks-msg">Thanks, James! Your order is on its way!</p>
+            <p id="thanks-name" class="thanks-msg">Thanks, James! Your order is on its way!</p>
         </div>
     </div>
     <script src="index.js" type="module"></script>

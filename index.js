@@ -16,22 +16,35 @@ document.addEventListener("click", function(e){
     else if(e.target.id == 'pay-modal-btn') {
         payOrder()
     }
+    else if(e.target.dataset.decrement) {
+        decrement(e.target.dataset.decrement)
+    }
+    else if(e.target.dataset.increment) {
+        increment(e.target.dataset.increment)
+    }
 })
 
-document.addEventListener("input", function(e){
-    if(e.target.dataset.qty) {
-        orderQty(e.target.dataset.qty)
-    }
-}) 
-
-function orderQty(itemId) {
-    const orderValue = document.getElementById(`qty-${itemId}`)
-
-    const targetObj = priceArray.filter(function(item){
+function decrement(itemId) {
+    const targetObj = priceArray.filter(function(item) {
         return item.id == itemId
     })[0]
-    
-    targetObj.qty = orderValue.value
+
+    if(targetObj.qty > 1) {
+        targetObj.qty--
+    }
+
+    targetObj.price = targetObj.basePrice * targetObj.qty
+
+    itemsTotalPrice(priceArray)
+    renderPriceHtml(priceArray)
+}
+
+function increment(itemId) {
+    const targetObj = priceArray.filter(function(item) {
+        return item.id == itemId
+    })[0]
+
+    targetObj.qty++
     targetObj.price = targetObj.basePrice * targetObj.qty
 
     itemsTotalPrice(priceArray)
@@ -68,6 +81,7 @@ function addItem(itemId) {
     
     itemsTotalPrice(priceArray)
     renderPriceHtml(priceArray)
+    
 }
 
 function removeItem(itemId) {
@@ -93,14 +107,18 @@ function completeOrder() {
 
 function payOrder() {
     document.getElementById("modal").style.display = "none"
+    const userNameInput = document.getElementById("user-name-input")
+
     render()
-    renderThanksMsg()
+    renderThanksMsg(userNameInput.value)
 }
 
-function renderThanksMsg() {
+function renderThanksMsg(userName) {
     document.getElementById("price-html-container").style.padding = "0"
     document.getElementById("price-html-container").innerHTML = ""
     document.getElementById("thanks-msg").style.display = "flex"
+    document.getElementById("thanks-name").innerText = `Thanks, ${userName}! Your order is on its way!`
+
 }
 
 document.getElementById("form-el").addEventListener('submit', function(e){
@@ -114,12 +132,11 @@ function renderPriceHtml(priceArray) {
         priceHtml += `
             <div class="grid-price">
                 <h2>${item.name}</h2>
-                <select id="qty-${item.id}" data-qty="${item.id}">
-                    <option selected>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                </select>
+                <div class="order-numbers">
+                    <span data-decrement="${item.id}">-</span>
+                    <span class="order-numbers-value">${item.qty}</span>
+                    <span data-increment="${item.id}">+</span>
+                </div>
                 <span class="light-color remove" data-remove="${item.id}">remove</span>
                 <span class="right-align">$${item.price}</span>
             </div>
